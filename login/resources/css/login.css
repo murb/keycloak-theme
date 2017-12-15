@@ -1,8 +1,3 @@
-.login-pf body {
-    background: #0f0f0f url("../img/keycloak-bg.png") top left no-repeat;
-    background-size: cover;
-}
-
 .alert-error {
     background-color: #ffffff;
     border-color: #cc0000;
@@ -12,7 +7,7 @@
 #kc-locale ul {
     display: none;
     position: absolute;
-    background-color: #fff;
+    background-color: #0a0a0a;
     list-style: none;
     right: 20px;
     top: 30px;

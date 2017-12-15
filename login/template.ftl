@@ -32,8 +32,8 @@
 </head>
 
 <body class="${properties.kcBodyClass!}">
-    <div id="kc-logo"><a href="${properties.kcLogoLink!'#'}"><div id="kc-logo-wrapper"></div></a></div>
-
+    <img src="${url.resourcesPath}/img/logo.${locale.current}.png" id="logo" />
+    <p>${locale.current}</p>
     <div id="kc-container" class="${properties.kcContainerClass!}">
         <div id="kc-container-wrapper" class="${properties.kcContainerWrapperClass!}">
 

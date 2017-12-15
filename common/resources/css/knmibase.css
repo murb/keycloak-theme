@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'RijksSans';
+  src: url(../fonts/ROsanswebtextregular.eot) format("embedded-opentype"), url(/src/fonts/ROsanswebtextregular.woff) format("opentype");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'RijksSans';
+  src: url(../fonts/ROsanswebtextitalic.eot) format("embedded-opentype"), url(/src/fonts/ROsanswebtextitalic.woff) format("opentype");
+  font-style: italic;
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'RijksSans';
+  src: url(../fonts/ROsanswebtextbold.eot) format("embedded-opentype"), url(/src/fonts/ROsanswebtextbold.woff) format("opentype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'RijksSerif';
+  src: url(../fonts/ROserifwebregular.eot) format("embedded-opentype"), url(/src/fonts/ROserifwebregular.woff) format("opentype");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'RijksSerif';
+  src: url(../fonts/ROserifwebitalic.eot) format("embedded-opentype"), url(/src/fonts/ROserifwebitalic.woff) format("opentype");
+  font-style: italic;
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'RijksSerif';
+  src: url(../fonts/ROserifwebbold.eot) format("embedded-opentype"), url(/src/fonts/ROserifwebbold.woff) format("opentype");
+  font-weight: bold;
+  font-style: normal; }
+
+body, .login-pf body {
+    font-size: 100%;
+    background: #fff;
+    font-family: "RijksSans", "Sans", Arial, sans-serif;
+    line-height: 1.5;
+    color: #0a0a0a;
+    background-image: none;
+}
+
+html {
+  font-size: initial;
+}
+
+@media print, screen and (min-width: 40em) {
+
+}
+@media print, screen and (min-width: 64em) {
+  body, .login-pf body {
+      font-size: 125%;
+  }
+}
+
