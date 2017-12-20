@@ -20,39 +20,24 @@
     </#if>
 </head>
 <body class="admin-console user ${bodyClass}">
-        
-    <header class="navbar navbar-default navbar-pf navbar-main header">
-        <nav class="navbar" role="navigation">
-            <div class="navbar-header">
-                <div class="container">
-                    <h1 class="navbar-title">Keycloak</h1>
-                </div>
-            </div>
-            <div class="navbar-collapse navbar-collapse-1">
-                <div class="container">
-                    <ul class="nav navbar-nav navbar-utility">
-                        <#if realm.internationalizationEnabled>
-                            <li>
-                                <div class="kc-dropdown" id="kc-locale-dropdown">
-                                    <a href="#" id="kc-current-locale-link">${locale.current}</a>
-                                    <ul>
-                                        <#list locale.supported as l>
-                                            <li class="kc-dropdown-item"><a href="${l.url}">${l.label}</a></li>
-                                        </#list>
-                                    </ul>
-                                </div>
-                            <li>
-                        </#if>
-                        <#if referrer?has_content && referrer.url?has_content><li><a href="${referrer.url}" id="referrer">${msg("backTo",referrer.name)}</a></li></#if>
-                        <li><a href="${url.logoutUrl}">${msg("doSignOut")}</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <header>
+    <img src="${url.resourcesPath}/img/logo.${locale.current}.png" id="logo" />
+    <ul class="user-area">
+        <#if realm.internationalizationEnabled>
+            <#list locale.supported as l>
+                <#if locale.current != l.label>
+                <li><a href="${l.url}">${l.label}</a></li>
+                </#if>
+            </#list>
+        </#if>
+        <#if referrer?has_content && referrer.url?has_content><li><a href="${referrer.url}" id="referrer">${msg("backTo",referrer.name)}</a></li></#if>
+        <li><a href="${url.logoutUrl}">${msg("doSignOut")}</a></li>
+    </ul>
     </header>
 
+
     <div class="container">
-        <div class="bs-sidebar col-sm-3">
+        <nav>
             <ul>
                 <li class="<#if active=='account'>active</#if>"><a href="${url.accountUrl}">${msg("account")}</a></li>
                 <#if features.passwordUpdateSupported><li class="<#if active=='password'>active</#if>"><a href="${url.passwordUrl}">${msg("password")}</a></li></#if>
@@ -62,7 +47,7 @@
                 <li class="<#if active=='applications'>active</#if>"><a href="${url.applicationsUrl}">${msg("applications")}</a></li>
                 <#if features.log><li class="<#if active=='log'>active</#if>"><a href="${url.logUrl}">${msg("log")}</a></li></#if>
             </ul>
-        </div>
+        </nav>
 
         <div class="col-sm-9 content-area">
             <#if message?has_content>

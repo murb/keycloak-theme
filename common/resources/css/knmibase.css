@@ -47,6 +47,49 @@ body, .login-pf body {
     background-image: none;
 }
 
+nav ul {
+  background-color: #01689B;
+  color: #fff;
+  border-bottom: solid 10px #CCE0F1;
+
+  list-style: none;
+  float: left;
+  width: 100%;
+  padding: 1em 2em 0;
+  font-size: 0.75em;
+/*  padding: 0;*/
+}
+table {
+  width: 100%;
+}
+thead td{
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+table td {
+  padding: 0.25em;
+}
+nav ul li {
+  float: left;
+  padding: 0.5em 1em;
+}
+nav ul a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  float: left;
+}
+nav ul li.active {
+  background: #CCE0F1;
+}
+nav ul li.active a {
+  color: #222;
+}
+.content-area {
+  padding: 0em 1.5em;
+  float: left;
+  width: 100%;
+}
 h1 {
   color: #01689B;
 }
@@ -90,7 +133,7 @@ a {
 a:hover {
   text-decoration: none;
 }
-textarea, input, .next-button {
+textarea, input, .next-button, button {
   border: 1px solid #E6E6E6;
   border-radius: none;
   font-size: 16px;
@@ -100,7 +143,7 @@ textarea, input, .next-button {
 }
 label {
   margin: 0.5em 0 0;
-  display: block;
+  display: inline-block;
 }
 input[type="text"],input[type="password"],input[type="date"] {
   width: 100%;
