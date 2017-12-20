@@ -1,0 +1,6 @@
+{
+    "themes": [{
+        "name" : "knmi_theme",
+        "types": [ "login", "email", "account" ]
+    }]
+}
