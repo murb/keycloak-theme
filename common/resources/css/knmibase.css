@@ -112,11 +112,16 @@ button, input[type="submit"] {
   border: 0 solid;
   border-radius: 3px;
 }
+.alert {
+  background: #fff;
+  border: 1px solid #01689B;
+  border-radius: 3px;
+  padding: 20px;
+  color: #01689B;
+}
 .alert.alert-error {
   background: #FFEDE8;
   border: 1px solid #D0021B;
-  border-radius: 3px;
-  padding: 20px;
   color: #D0021B;
 }
 
