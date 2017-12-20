@@ -90,12 +90,13 @@ a {
 a:hover {
   text-decoration: none;
 }
-textarea, input {
+textarea, input, .next-button {
   border: 1px solid #E6E6E6;
   border-radius: none;
   font-size: 16px;
   font-family: "RijksSans", "Sans", Arial, sans-serif;
   padding: 0.5em;
+  text-decoration: none;
 }
 label {
   margin: 0.5em 0 0;
@@ -106,11 +107,17 @@ input[type="text"],input[type="password"],input[type="date"] {
   background: #fff;
   color: #222;
 }
-button, input[type="submit"] {
+button, input[type="submit"], .next-button {
   background: #01689B;
   color: #fff;
   border: 0 solid;
   border-radius: 3px;
+  display: inline-block;
+}
+.next-button::after {
+  content: "➜";
+  margin-left: 0.5em;
+  font-weight: bold;
 }
 .alert {
   background: #fff;
@@ -125,8 +132,33 @@ button, input[type="submit"] {
   color: #D0021B;
 }
 
-html {
-  font-size: initial;
+#kc-social-providers {
+  border-top: 3px solid #fff;
+  margin-top: 1.75em;
+}
+#kc-social-providers ul {
+  list-style: none;
+  padding: 0;
+}
+#kc-social-providers .reveal.hidden {
+/*  display: none;*/
+  max-height: 0em;
+  transition: max-height 1s;
+}
+#kc-social-providers .reveal {
+  overflow: hidden;
+  height: auto;
+  max-height: 20em;
+  transition: max-height 1s;
+}
+[data-revealer]::before {
+  content: "»";
+  font-weight: bold;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+[data-revealer].revealing::before {
+  transform: rotate(90deg);
 }
 
 @media print, screen and (min-width: 40em) {
@@ -140,7 +172,7 @@ html {
       font-size: 125%;
       padding: 1em;
   }
-  textarea, input {
+  textarea, input, .next-button {
     font-size: 18px;
   }
 

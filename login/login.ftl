@@ -3,7 +3,7 @@
     <#if section = "title">
         ${msg("loginTitle",(realm.displayName!''))}
     <#elseif section = "header">
-        ${msg("loginTitleHtml",(realm.displayNameHtml!''))?no_esc}
+        ${msg("loginTitle",(realm.displayName!''))}
     <#elseif section = "form">
         <#if realm.password>
             <form id="kc-form-login" class="${properties.kcFormClass!}" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
@@ -67,13 +67,18 @@
         </#if>
 
         <#if realm.password && social.providers??>
-            <div id="kc-social-providers">
-                <ul>
-                    <#list social.providers as p>
-                        <li><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span class="text">${p.displayName}</span></a></li>
-                    </#list>
-                </ul>
-            </div>
+        <div id="kc-social-providers">
+          <h3><a href="#social-provider-selector" data-revealer>${msg("providerLogin")}</a></h3>
+          <div id="social-provider-selector">
+          <label for="social-provider-filter">${msg("providerLoginLabel")}</label>
+          <input id="social-provider-filter" name="social-provider-filter" type="text" />
+          <ul data-filtered-by="social-provider-filter">
+              <#list social.providers as p>
+                  <li title="${p.displayName}"><a href="${p.loginUrl}" id="zocial-${p.alias}" class="next-button ${p.providerId}"> <span class="text">${p.displayName}</span></a></li>
+              </#list>
+          </ul>
+          </div>
+        </div>
         </#if>
     </#if>
 </@layout.registrationLayout>
