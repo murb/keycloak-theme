@@ -32,29 +32,24 @@
 </head>
 
 <body class="${properties.kcBodyClass!}">
+    <header>
     <img src="${url.resourcesPath}/img/logo.${locale.current}.png" id="logo" />
-    <p>${locale.current}</p>
+    <ul class="user-area">
+        <#if realm.internationalizationEnabled>
+            <#list locale.supported as l>
+                <#if locale.current != l.label>
+                <li class="kc-dropdown-item"><a href="${l.url}">${l.label}</a></li>
+                </#if>
+            </#list>
+        </#if>
+    </ul>
+    </header>
+
     <div id="kc-container" class="${properties.kcContainerClass!}">
         <div id="kc-container-wrapper" class="${properties.kcContainerWrapperClass!}">
 
-            <div id="kc-header" class="${properties.kcHeaderClass!}">
-                <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"><#nested "header"></div>
-            </div>
+            <h1><#nested "header"></h1>
 
-            <#if realm.internationalizationEnabled>
-                <div id="kc-locale" class="${properties.kcLocaleClass!}">
-                    <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
-                        <div class="kc-dropdown" id="kc-locale-dropdown">
-                            <a href="#" id="kc-current-locale-link">${locale.current}</a>
-                            <ul>
-                                <#list locale.supported as l>
-                                    <li class="kc-dropdown-item"><a href="${l.url}">${l.label}</a></li>
-                                </#list>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </#if>
 
             <div id="kc-content" class="${properties.kcContentClass!}">
                 <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">

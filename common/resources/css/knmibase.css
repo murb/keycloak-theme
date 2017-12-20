@@ -1,38 +1,42 @@
 @font-face {
   font-family: 'RijksSans';
-  src: url(../fonts/ROsanswebtextregular.eot) format("embedded-opentype"), url(/src/fonts/ROsanswebtextregular.woff) format("opentype");
+  src: url(../fonts/ROsanswebtextregular.eot) format("embedded-opentype"), url(../fonts/ROsanswebtextregular.woff) format("opentype");
   font-style: normal;
   font-weight: normal; }
 
 @font-face {
   font-family: 'RijksSans';
-  src: url(../fonts/ROsanswebtextitalic.eot) format("embedded-opentype"), url(/src/fonts/ROsanswebtextitalic.woff) format("opentype");
+  src: url(../fonts/ROsanswebtextitalic.eot) format("embedded-opentype"), url(../fonts/ROsanswebtextitalic.woff) format("opentype");
   font-style: italic;
   font-weight: normal; }
 
 @font-face {
   font-family: 'RijksSans';
-  src: url(../fonts/ROsanswebtextbold.eot) format("embedded-opentype"), url(/src/fonts/ROsanswebtextbold.woff) format("opentype");
+  src: url(../fonts/ROsanswebtextbold.eot) format("embedded-opentype"), url(../fonts/ROsanswebtextbold.woff) format("opentype");
   font-weight: bold;
   font-style: normal; }
 
 @font-face {
   font-family: 'RijksSerif';
-  src: url(../fonts/ROserifwebregular.eot) format("embedded-opentype"), url(/src/fonts/ROserifwebregular.woff) format("opentype");
+  src: url(../fonts/ROserifwebregular.eot) format("embedded-opentype"), url(../fonts/ROserifwebregular.woff) format("opentype");
   font-style: normal;
   font-weight: normal; }
 
 @font-face {
   font-family: 'RijksSerif';
-  src: url(../fonts/ROserifwebitalic.eot) format("embedded-opentype"), url(/src/fonts/ROserifwebitalic.woff) format("opentype");
+  src: url(../fonts/ROserifwebitalic.eot) format("embedded-opentype"), url(../fonts/ROserifwebitalic.woff) format("opentype");
   font-style: italic;
   font-weight: normal; }
 
 @font-face {
   font-family: 'RijksSerif';
-  src: url(../fonts/ROserifwebbold.eot) format("embedded-opentype"), url(/src/fonts/ROserifwebbold.woff) format("opentype");
+  src: url(../fonts/ROserifwebbold.eot) format("embedded-opentype"), url(../fonts/ROserifwebbold.woff) format("opentype");
   font-weight: bold;
   font-style: normal; }
+
+* {
+  box-sizing: border-box;
+}
 
 body, .login-pf body {
     font-size: 100%;
@@ -43,16 +47,97 @@ body, .login-pf body {
     background-image: none;
 }
 
+h1 {
+  color: #01689B;
+}
+
+#logo {
+  float: left;
+  width: 252px;
+  margin-top: -65px;
+  margin-bottom: 7px;
+
+}
+
+body > header {
+  height: 8em;
+}
+#kc-container {
+
+  background: #E5F0F9;
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+  padding: 0.5em 2em 2em;
+}
+#kc-form-buttons {
+  margin: 1em 0;
+}
+ul.user-area {
+  font-size: 0.825em;
+  list-style: none;
+  margin:0 0 2em;
+  padding: 0;
+  float: right;
+}
+ul.user-area li {
+
+}
+
+a {
+  color: #01689B;
+}
+a:hover {
+  text-decoration: none;
+}
+textarea, input {
+  border: 1px solid #E6E6E6;
+  border-radius: none;
+  font-size: 16px;
+  font-family: "RijksSans", "Sans", Arial, sans-serif;
+  padding: 0.5em;
+}
+label {
+  margin: 0.5em 0 0;
+  display: block;
+}
+input[type="text"],input[type="password"],input[type="date"] {
+  width: 100%;
+  background: #fff;
+  color: #222;
+}
+button, input[type="submit"] {
+  background: #01689B;
+  color: #fff;
+  border: 0 solid;
+  border-radius: 3px;
+}
+.alert.alert-error {
+  background: #FFEDE8;
+  border: 1px solid #D0021B;
+  border-radius: 3px;
+  padding: 20px;
+  color: #D0021B;
+}
+
 html {
   font-size: initial;
 }
 
 @media print, screen and (min-width: 40em) {
-
+  #logo {
+    margin-left: 50%;
+    margin-left: calc( 50% - 22px);
+  }
 }
 @media print, screen and (min-width: 64em) {
   body, .login-pf body {
       font-size: 125%;
+      padding: 1em;
   }
+  textarea, input {
+    font-size: 18px;
+  }
+
 }
 
