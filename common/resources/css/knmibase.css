@@ -156,6 +156,9 @@ button, input[type="submit"], .next-button {
   border: 0 solid;
   border-radius: 3px;
   display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .next-button::after {
   content: "➜";
