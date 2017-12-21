@@ -8,11 +8,17 @@ When mounting this theme in the themedir make sure the directory name === "`knmi
 
 ## Developing
 
-See [this blogpost on how to use Keycloak with Docker](https://murb.nl/articles/291-developing-keycloak-templates-with-docker/)
+Navigate to the directory where you've checked your theme out and run (this uses a temporary H2 database, see [this blogpost on how to use Keycloak with Docker](https://murb.nl/articles/291-developing-keycloak-templates-with-docker/)):
 
-Navigate to the directory where you've checked your theme out and run:
+    docker run -d -it -p 9080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin --name keycloak -v `pwd`:/opt/jboss/keycloak/themes/knmi_theme jboss/keycloak
 
-docker run -d -it -p 9080:8080 --name keycloak --link mysql:mysql --mount type=bind,source=`pwd`,target=/opt/jboss/keycloak/themes/knmi_theme jboss/keycloak
+## Localisation
+
+This theme has beend eveloped with localisation in mind, but current UI only supports a switching locale (Nederlands (Dutch) <=> English)
+
+### Some remarks
+
+* Translations can be changed set in the messages directory. Be careful when using UTF-8 characters, use the ascii notation (e.g. `\u00eb` instead of `ë`).
 
 ## Modifying the template
 
@@ -21,12 +27,9 @@ still match the variables required:
 
 * `/login/*.ftl`
 * `messages/*`
-
-### Some remarks
-
-* Translations can be set in the messages directory. Be careful when using UTF-8 characters, use the ascii notation (e.g. `\u00eb` instead of `ë`).
-
+* `/account/*.ftl`
 
 ## Todo
 
-* Distributable Theme / build script
+* Optionally: Distributable Theme / build script
+* Think of a correct way of referencing Terms & Conditions (preferably configurable?)
