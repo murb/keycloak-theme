@@ -28,7 +28,11 @@
 
 <body class="${properties.kcBodyClass!}">
     <header>
-    <img src="${url.resourcesPath}/img/logo.${locale.current}.png" id="logo" />
+    <#if realm.internationalizationEnabled>
+        <img src="${url.resourcesPath}/img/logo.${locale.current}.png" id="logo" />
+    <#else>
+        <img src="${url.resourcesPath}/img/logo.Nederlands.png" id="logo" />
+    </#if>
     <ul class="user-area">
         <#if realm.internationalizationEnabled>
             <#list locale.supported as l>
