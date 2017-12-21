@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function(event){
   var elements = document.querySelectorAll("ul[data-filtered-by=\"social-provider-filter\"] li")
 
   if (elements.length > 10) {
-    console.log("elements larger than 10");
     var hideSocialProviders = function(){
       for (var i = elements.length - 1; i >= 0; i--) {
         element = elements[i];
@@ -29,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function(event){
     filterInput.addEventListener("change", filterChangeCallback);
     filterInput.addEventListener("input", filterChangeCallback);
   } else {
-    console.log("elements < than 10");
-
     document.getElementById("social-provider-filter").style.display = 'none';
     document.querySelector("label[for='social-provider-filter']").style.display = 'none';
   }
@@ -63,8 +60,4 @@ document.addEventListener("DOMContentLoaded", function(event){
     toggle.addEventListener("click", toggleDisplay);
     toggle.addEventListener("touch", toggle);
   }
-
 });
-// var document.querySelectorAll("")
-//
-// var document.querySelectorAll
