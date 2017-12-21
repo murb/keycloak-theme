@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event){
   var elements = document.querySelectorAll("ul[data-filtered-by=\"social-provider-filter\"] li")
 
-  if (elements.length > 10) {
+  if (elements.length >= 7) {
     var hideSocialProviders = function(){
       for (var i = elements.length - 1; i >= 0; i--) {
         element = elements[i];
