@@ -58,7 +58,7 @@
                 <div class="alert alert-${message.type}">
                     <#if message.type=='success' ><span class="pficon pficon-ok"></span></#if>
                     <#if message.type=='error' ><span class="pficon pficon-error-octagon"></span><span class="pficon pficon-error-exclamation"></span></#if>
-                    ${message.summary?no_esc}
+                    ${message.summary}
                 </div>
             </#if>
 
