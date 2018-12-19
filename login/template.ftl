@@ -29,9 +29,10 @@
 <body class="${properties.kcBodyClass!}">
     <header>
     <#if realm.internationalizationEnabled>
-    <img src="${url.resourcesPath}/img/logo.${locale.current}.png" id="logo" />
+        <img src="${url.resourcesPath}/img/logo.${locale.current}.png" id="logo" />
+    <#else>
+        <img src="${url.resourcesPath}/img/logo.Nederlands.png" id="logo" />
     </#if>
-
     <ul class="user-area">
         <#if realm.internationalizationEnabled>
             <#list locale.supported as l>
@@ -59,7 +60,7 @@
                                 <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
                                 <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
                                 <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-                                <span class="kc-feedback-text">${message.summary?no_esc}</span>
+                                <span class="kc-feedback-text">${message.summary}</span>
                             </div>
                         </div>
                     </#if>
