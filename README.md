@@ -10,7 +10,9 @@ When mounting this theme in the themedir make sure the directory name === "`knmi
 
 Navigate to the directory where you've checked your theme out and run (this uses a temporary H2 database, see [this blogpost on how to use Keycloak with Docker](https://murb.nl/articles/291-developing-keycloak-templates-with-docker/)):
 
-    docker run -d -it -p 9080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin --name keycloak -v `pwd`:/opt/jboss/keycloak/themes/knmi_theme jboss/keycloak
+    docker-compose up
+
+This should automatically create an admin user for you (admin/Pa55w0rd)
 
 ## Localisation
 
